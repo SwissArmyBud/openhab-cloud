@@ -31,9 +31,7 @@
     },
     "mongodb": {
         "hosts": ["127.0.0.1"],
-        "db": "openhab",
-        "user": "",
-        "password": ""
+        "db": "openhab"
     },
     "redis": {
         "host": "127.0.0.1",
@@ -41,6 +39,7 @@
         "password": "password"
     },
     "mailer": {
+        "sending" : "disabled"
         "host" : "smtp",
         "port": 465,
         "secureConnection": true,

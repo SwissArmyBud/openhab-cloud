@@ -6,8 +6,9 @@ var path = require('path'),
     logger = require('./logger.js'),
     app = require('./app'),
     productionEnv = process.env.NODE_ENV || 'dev';
+    sending = (productionEnv === 'production') || (app.config.mailer.sending === 'enabled');
 
-if (productionEnv === 'production') {
+if (sending) {
     module.exports.sendEmail = function (email, subject, templateName, locals, cb) {
         emailTemplates(templatesDir, function (err, template) {
             if (err) {
